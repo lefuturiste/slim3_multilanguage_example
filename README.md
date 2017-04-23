@@ -1,0 +1,2 @@
+# slim3_multilanguage_example
+Complete example of slim3_multilanguage
