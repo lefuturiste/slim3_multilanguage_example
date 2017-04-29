@@ -2,7 +2,11 @@
 //Application router
 require '../vendor/autoload.php';
 
-$app = new \Slim\App();
+$app = new \Slim\App([
+    'settings' => [
+        'displayErrorDetails' => true
+    ]
+]);
 
 $container = $app->getContainer();
 
@@ -29,8 +33,9 @@ $defaultLang = 'en';
 $app->add(new slim3_multilanguage\MultilanguageMiddleware([
     'availableLang' => $availableLang,
     'defaultLang' => $defaultLang,
-    'twig' => $twigEnvironment,
-    'container' => $container
+    'twig' => $twigEnvironment->getEnvironment(),
+    'container' => $container,
+    'langFolder' => '../App/lang/'
 ]));
 
 $app->get('/no-page-multilanguage-support', 'CALLED FONCTION');
@@ -38,7 +43,18 @@ $app->get('/no-page-multilanguage-support', 'CALLED FONCTION');
 $app->group('/{lang:[a-z]{2}}', function () use ($container){
 
     //route for /{lang}
-    $this->get('', 'CALLED FONCTION')->setName('home');
+    $this->get('', function () use ($container){
+        //show current lang id (ex : "fr")
+        var_dump($container->lang);
+
+        //show current lang dictionnay
+        var_dump($container->dictionary);
+
+        //show title and hello world
+        echo '<h1>' . $container->dictionary['title'] . '</h1>';
+        echo $container->dictionary['hello_world'];
+
+    })->setName('home');
 
     //route for /{lang}/contact
     $this->get('/contact', 'CALLED FONCTION')->setName('contact');

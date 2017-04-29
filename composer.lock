@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ba30db285ae492834021ab0202f485d",
+    "content-hash": "4fa8b7bb8263b5813464db8080189580",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -77,16 +77,16 @@
         },
         {
             "name": "lefuturiste/slim3_multilanguage",
-            "version": "v0.5",
+            "version": "v0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lefuturiste/slim3_multilanguage.git",
-                "reference": "6a011ab9508289e0a739c0e669c3388a8cab28ba"
+                "reference": "9dc63f45a46f2847f588495e51f726915b4bf567"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lefuturiste/slim3_multilanguage/zipball/6a011ab9508289e0a739c0e669c3388a8cab28ba",
-                "reference": "6a011ab9508289e0a739c0e669c3388a8cab28ba",
+                "url": "https://api.github.com/repos/lefuturiste/slim3_multilanguage/zipball/9dc63f45a46f2847f588495e51f726915b4bf567",
+                "reference": "9dc63f45a46f2847f588495e51f726915b4bf567",
                 "shasum": ""
             },
             "type": "library",
@@ -111,7 +111,7 @@
                 "multilanguage",
                 "slim3"
             ],
-            "time": "2017-04-23T14:20:35+00:00"
+            "time": "2017-04-29T08:31:33+00:00"
         },
         {
             "name": "nikic/fast-route",
